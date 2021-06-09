@@ -1,0 +1,13 @@
+ame: Sentiment analysis on public
+
+on: push
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 #Be sure you checkout the files beforehand
+    - name: Run sentiment analysis on HTML files
+      uses: bogdaaamn/copy-sentiment-analysis@v0.6.1
+      with: 
+        gcp_key: ${{ secrets.GCP_KEY }} #Google Cloud Platform API key. Read the README for instructions 
